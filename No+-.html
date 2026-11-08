@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    body {font-family: Arial, sans-serif; text-align: center; margin-top: 50px;}
+    .box {
+      display: inline-block;
+      width: 120px;
+      padding: 20px;
+      margin: 10px;
+      border: 2px solid #333;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      user-select: none;
+    }
+    #increase { background: #f7dcc5; }
+    #decrease { background: #c5d3f7; }
+    #output {
+      cursor: default;
+      background: #f0f0f080;
+      font-size: 28px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" id="increase">Increase</div>
+  <div class="box" id="output">0</div>
+  <div class="box" id="decrease">Decrease</div>
+
+  <script>
+    let count = 0;
+
+    const increaseBox = document.getElementById("increase");
+    const decreaseBox = document.getElementById("decrease");
+    const outputBox = document.getElementById("output");
+
+    increaseBox.addEventListener("click", function () {
+      count++;
+      outputBox.textContent = count;
+    });
+
+    decreaseBox.addEventListener("click", function () {
+      count--;
+      outputBox.textContent = count;
+    });
+  </script>
+
+</body>
+</html>
